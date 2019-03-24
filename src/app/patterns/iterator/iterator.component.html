@@ -1,10 +1,12 @@
 <h1>Iterator Pattern</h1>
-The iterator pattern controls the iterating of a collection
+The iterator pattern allows you to traverse a collection sequentially without exposing the underlying code.
 
 <h2>Numbers</h2>
-<p>{{ currentNumber }}</p>
-<button (click)="rewindNumbers()">rewind</button><button (click)="nextNumber()">next</button>
+<p>Current number: {{ currentNumber }}</p>
+<p>Next number: {{ nextNumber }}</p>
+<button (click)="rewindNumbers()">rewind</button><button (click)="moveNextNumber()">next</button>
 
 <h2>Words</h2>
-<p>{{ currentWord }}</p>
-<button (click)="rewindWords()">rewind</button><button (click)="nextWord()">next</button>
+<p>Current word: {{ currentWord }}</p>
+<p>Next word: {{ nextWord }}</p>
+<button (click)="rewindWords()">rewind</button><button (click)="moveNextWord()">next</button>

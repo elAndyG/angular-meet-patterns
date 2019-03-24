@@ -1,10 +1,12 @@
 interface Iterator<T> {
+  readonly current: T;
   next(): T;
   hasNext(): boolean;
   rewind(): void; // optional
 }
 
 export class GenericIterator<T> implements Iterator<T> {
+  current: T = null;
   private _collection: T[];
   private _index = 0;
 
@@ -14,9 +16,14 @@ export class GenericIterator<T> implements Iterator<T> {
 
   // ** move to the next item in the collection */
   next(): T {
-    const result = this._collection[this._index];
-    this._index += 1;
-    return result;
+    if (this._index >= this._collection.length) {
+      this.current = null;
+    } else {
+      this.current = this._collection[this._index];
+      this._index += 1;
+    }
+
+    return this.current;
   }
 
   // ** peeks to see if you can move to the next item in the collection */

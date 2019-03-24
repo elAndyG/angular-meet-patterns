@@ -9,6 +9,8 @@ import { GenericIterator } from './iterator';
 export class IteratorComponent implements OnInit {
   currentNumber: number;
   currentWord: string;
+  nextNumber: number;
+  nextWord: string;
 
   numbers: GenericIterator<number>;
   words: GenericIterator<string>;
@@ -18,17 +20,21 @@ export class IteratorComponent implements OnInit {
     this.words = new GenericIterator(['lorem', 'ipsum', 'some', 'other', 'words']);
   }
 
-  nextNumber() {
+  moveNextNumber() {
     if (!this.numbers.hasNext()) {
       this.numbers.rewind();
     }
-    this.currentNumber = this.numbers.next();
+
+    this.currentNumber = this.numbers.current;
+    this.nextNumber = this.numbers.next();
   }
-  nextWord() {
+  moveNextWord() {
     if (!this.words.hasNext()) {
       this.words.rewind();
     }
-    this.currentWord = this.words.next();
+
+    this.currentWord = this.words.current;
+    this.nextWord = this.words.next();
   }
 
   rewindNumbers() {
