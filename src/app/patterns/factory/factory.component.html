@@ -1,0 +1,19 @@
+<h1>Factory Method Pattern</h1>
+The factory method is a Creational Pattern. The purpose of it is to encapsulate the process of creating objects. If you
+have "new" anywhere in your pipeline, I would recommend trying a factory; it will limit the amount of code you will
+change in the future as well as shrink the amount of code you need to retest when this happens.
+
+<h2>Birds</h2>
+<p>A really simple example</p>
+The {{ selectedBird }} says {{ selectedBirdSays }}
+<button (click)="selectBird('hawk')">Hawk</button>
+<button (click)="selectBird('chicken')">Chicken</button>
+<button (click)="selectBird('eagle')">Eagle</button>
+
+<h2>Home Run Derby</h2>
+<p>A simplish example with a little more logic</p>
+The {{ playerType }} {{ action }}. {{ distance }} feet.
+
+<button (click)="hit('little')">Little Leaguer</button>
+<button (click)="hit('aaa')">AAA Player</button>
+<button (click)="hit('major')">Major Leaguer</button>
